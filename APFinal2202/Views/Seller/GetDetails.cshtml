@@ -1,0 +1,151 @@
+﻿@model APFinal2202.ViewModels.SellerOrAgent.GetSellerDetailsViewModel
+@{
+    ViewBag.Title = "Seller Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="white">@ViewBag.Title</h1>
+<div>
+    <div>
+        <h3 class="white">This is seller <strong>@Model.FirstName</strong> details page</h3>
+        <br />
+    </div>
+    <div class="clearfix parent">
+        <div class="col-md-3">
+            <div class="col-md-12">
+                <div class="row form-group">
+                    <div class="checkbox">
+                        <label>
+                            @Html.DisplayFor(m => m.Signature, new { type = "checkbox" })
+                            @Html.LabelFor(m => m.Signature, new {@class="white"})
+                        </label>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="checkbox">
+                        <label>
+                            @Html.DisplayFor(m => m.ApprovalStatus, new { type = "checkbox" })
+                            @Html.LabelFor(m => m.ApprovalStatus, new { @class = "white" })
+                        </label>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(m => m.SellerType, new { @class = "col-md-4 control-label white" })
+                    <div class="col-md-8 white">
+                        @Html.DisplayFor(m => m.SellerType, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    @Html.LabelFor(m => m.NationalIdentificationNumber, new { @class = "col-md-4 control-label white" })
+                    <div class="col-md-8 white">
+                        @Html.DisplayFor(m => m.NationalIdentificationNumber, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="checkbox">
+                        <label>
+                            @Html.DisplayFor(m => m.ReceiveNewsletter, new { type = "checkbox" })
+                            @Html.LabelFor(m => m.ReceiveNewsletter, new { @class = "white" })
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.FirstName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Username, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.Username, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.PhoneNumber, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Role, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.Role, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row form-group">
+                @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.AddressLine1, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label white pull-left" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.AddressLine2, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.Town, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.Province, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.PostalCode, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.Country, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row form-group">
+                @Html.LabelFor(m => m.PhotoType, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.PhotoType, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.FileName, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    @Html.DisplayFor(m => m.FileName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Image, new { @class = "col-md-4 control-label white" })
+                <div class="col-md-8 white">
+                    <img src="@Model.Image" alt="profile photo" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

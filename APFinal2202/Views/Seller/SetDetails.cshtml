@@ -1,0 +1,104 @@
+﻿@using APFinal2202.Enums
+@using Microsoft.AspNet.Identity
+@model APFinal2202.ViewModels.SellerOrAgent.SetSellerDetailsViewModel
+@{
+    ViewBag.Title = "Seller";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (User.IsInRole("Administrator"))
+{
+    <div class="jumbotron">
+        <div class="row">
+            <h1>This is the @ViewBag.Title page</h1>
+            <p>Here are the list of sellers</p>
+        </div>
+    </div>
+}
+else
+{
+    <div>
+        @using (Html.BeginForm("SetDetails", "Seller", new { model = Model }, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="parent">
+                <br />
+                <div class="col-md-4">
+                    <div class="row form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.Signature, new { type = "checkbox"})
+                                @Html.LabelFor(m => m.Signature, new { @class = "white" })
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.ApprovalStatus, new { type = "checkbox" })
+                                @Html.LabelFor(m => m.ApprovalStatus, new { @class = "white" })
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.SellerType, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.DropDownListFor(m => m.SellerType, EnumHelper.GetSelectList(typeof(SellerType)), "Seller Type", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SellerType)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.AddressLine1, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.AddressLine2, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.Town, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.Province, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.PostalCode, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.Country, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.ProfilePhoto, new { @class = "col-md-6 control-label white", @for = "profilePhotoFile" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.ProfilePhoto, new { @class = "form-control", type = "file", id = "profilePhotoFile" })
+                            @Html.ValidationMessageFor(m => m.ProfilePhoto)
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+                    <input type="submit" class="btn btn-lg bg-white text-dark" value="Submit" />
+                </div>
+            </div>
+        }
+    </div>
+}

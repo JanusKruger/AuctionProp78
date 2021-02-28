@@ -1,0 +1,53 @@
+﻿@model IEnumerable<APFinal2202.ViewModels.Property.PropertyViewModel>
+
+@{
+    ViewBag.Title = "Properties For Seller";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnershipType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyStatus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title, new { @class = "white" }))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description, new { @class = "white" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyType, new { @class = "white" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnershipType, new { @class = "white" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyStatus, new { @class = "white" })
+            </td>
+            <td>
+                @Html.ActionLink("Set Auction", "StartAuction", "Auction", new { id = item.Id }, new { @class = "white" })
+            </td>
+        </tr>
+    }
+
+</table>
