@@ -50,10 +50,6 @@ namespace APFinal2202.ViewModels.Property
         [Display(Name = "File Name")]
         public string FileName { get; set; }
 
-        [DataType(DataType.Url)]
-        [Display(Name = "Link")]
-        public string Link { get; set; }
-
         [DataType(DataType.Upload)]
         [Display(Name = "Blueprint Plans")]
         public HttpPostedFileBase[] Blueprint { get; set; }

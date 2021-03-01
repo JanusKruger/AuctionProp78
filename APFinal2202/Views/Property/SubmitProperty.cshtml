@@ -94,8 +94,7 @@
                                 </div>
                                 <div class="col-xs-12 p-2">
                                     <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea">
-                                        @Html.TextAreaFor(m => m.Description, new { @class = "mdc-text-field__input", rows = "5" })
-                                        <textarea class="mdc-text-field__input" rows="5"></textarea>
+                                        @Html.TextAreaFor(m => m.Description, new { @class = "mdc-text-field__input", cols="1", rows = "5" })
                                         <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                                             <div class="mdc-notched-outline__leading"></div>
                                             <div class="mdc-notched-outline__notch">
@@ -654,13 +653,11 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-7 p-2">
                                                             <div class="mdc-text-field mdc-text-field--outlined">
-                                                                @Html.TextBoxFor(m => m.Link, new { @class = "mdc-text-field__input", id = "propertyLink" })
-                                                                @*<input class="mdc-text-field__input">*@
+                                                                <input class="mdc-text-field__input">
                                                                 <div class="mdc-notched-outline">
                                                                     <div class="mdc-notched-outline__leading"></div>
                                                                     <div class="mdc-notched-outline__notch">
-                                                                        @Html.LabelFor(m => m.Link, new { @class = "mdc-floating-label", @for = "propertyLink" })
-                                                                        @*<label class="mdc-floating-label">Link</label>*@
+                                                                        <label class="mdc-floating-label">Link</label>
                                                                     </div>
                                                                     <div class="mdc-notched-outline__trailing"></div>
                                                                 </div>
@@ -697,13 +694,11 @@
                                                     </div>
                                                     <div class="col-xs-12 col-sm-7 p-2">
                                                         <div class="mdc-text-field mdc-text-field--outlined">
-                                                            @Html.TextBoxFor(m => m.Link, new { @class = "mdc-text-field__input", id = "propertyLink" })
-                                                            @*<input class="mdc-text-field__input">*@
+                                                            <input class="mdc-text-field__input">
                                                             <div class="mdc-notched-outline">
                                                                 <div class="mdc-notched-outline__leading"></div>
                                                                 <div class="mdc-notched-outline__notch">
-                                                                    @Html.LabelFor(m => m.Link, new { @class = "mdc-floating-label", @for = "propertyLink" })
-                                                                    @*<label class="mdc-floating-label">Link</label>*@
+                                                                    <label class="mdc-floating-label">Link</label>
                                                                 </div>
                                                                 <div class="mdc-notched-outline__trailing"></div>
                                                             </div>

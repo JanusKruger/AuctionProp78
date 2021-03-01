@@ -87,7 +87,6 @@ namespace APFinal2202.Controllers
         public ActionResult SellersGuide()
         {
             ViewBag.Message = "Seller Info.";
-
             return View();
         }
 

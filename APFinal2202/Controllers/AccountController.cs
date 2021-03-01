@@ -69,7 +69,7 @@ namespace APFinal2202.Controllers
                 return View(model);
             }
 
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = await UserManager.FindByEmailAsync(model.Email);
             if (user != null)
             {
                 if (!await UserManager.IsEmailConfirmedAsync(user.Id))
@@ -78,7 +78,9 @@ namespace APFinal2202.Controllers
                     return View("Error");
                 }
             }
+
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, true);
+            //TODO: Need to find a way of redirecting to the correct action and controller, based on the user type
             switch (result)
             {
                 case SignInStatus.Success:

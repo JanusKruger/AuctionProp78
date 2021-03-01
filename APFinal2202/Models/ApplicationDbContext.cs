@@ -9,8 +9,9 @@ namespace APFinal2202.Models
     public sealed class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: true)
+            : base("DefaultConnection", true)
         {
+            //AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
         }
 
         public DbSet<Address> Addresses { get; set; }
