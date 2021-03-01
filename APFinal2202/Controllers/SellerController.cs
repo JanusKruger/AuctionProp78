@@ -84,6 +84,13 @@ namespace APFinal2202.Controllers
             return RedirectToAction("GetDetails", "Seller");
         }
 
+        public ActionResult SellersGuide()
+        {
+            ViewBag.Message = "Seller Info.";
+
+            return View();
+        }
+
         //
 
         private readonly ApplicationDbContext context;
@@ -95,11 +102,6 @@ namespace APFinal2202.Controllers
             var user = context.Users.FirstOrDefault(it => it.Id == userId);
             var seller = context.Sellers.FirstOrDefault(it => it.UserId == user.Id);
             return seller;
-        }
-
-        public ActionResult SellersGuide()
-        {
-            return View();
         }
     }
 }

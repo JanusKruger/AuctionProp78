@@ -30,11 +30,6 @@ namespace APFinal2202.Controllers
 
         }
 
-        public ActionResult BuyersGuide()
-        {
-            return View();
-        }
-
         public ActionResult SetDetails()
         {
             return View();
@@ -87,6 +82,13 @@ namespace APFinal2202.Controllers
 
             (multimedia, address, existingBuyer) = mapper.Map(model, userId);
             return RedirectToAction("GetDetails", "Seller");
+        }
+
+        public ActionResult BuyersGuide()
+        {
+            ViewBag.Message = "Buyers Guide.";
+
+            return View();
         }
 
         //
